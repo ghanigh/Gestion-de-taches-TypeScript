@@ -1,0 +1,57 @@
+/* Styles généraux pour le tableau de bord */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* Styles pour le titre du tableau de bord */
+  .dashboard-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles pour les sections du tableau de bord */
+  .dashboard-section {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styles pour les titres de section */
+  .section-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles pour les listes d'éléments */
+  .list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Styles pour les éléments de liste */
+  .list-item {
+    margin-bottom: 5px;
+  }
+  
+  /* Styles pour les liens */
+  .link {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .link:hover {
+    color: #0056b3;
+  }
+  
