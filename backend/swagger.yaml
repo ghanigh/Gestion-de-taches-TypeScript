@@ -159,81 +159,168 @@ paths:
                         name:
                           type: string
                           example: "A faire"
+                    done:
+                      type: boolean
+                      example: false
+                    expiration:
+                      type: string
+                      format: date-time
+                      example: "2024-04-22T00:00:00Z"
         '500':
           description: Unexpected Error
     post:
-     summary: Send a new task
-     security:
-       - BearerAuth: []
-
-     requestBody:
-       required: true
-       content:
-         application/json:
-           schema:
-             type: object
-             properties:
-               title:
-                 type: string
-               content:
-                 type: string
-               priority:
-                 type: integer
-                 format: int64 
-               category:
-                 type: integer
-                 format: int64
-     responses:
-       '201':
-         description: Created
-         content:
-           application/json:
-             schema:
-               type: object
-               properties:
-                 id:
-                   type: integer
-                   format: int64
-                 title:
-                   type: string
-                 content:
-                   type: string
-                 priority:
-                   type: integer
-                   format: int64
-                 categoryId:
-                   type: string
-                 userId:
-                   type: integer
-                   format: int64
-       '500':
-         description: Unexpected Error
-       '401':
-         description: Unauthorized
-       '400':
-         description: Bad Request
+      summary: Send a new task
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                content:
+                  type: string
+                priority:
+                  type: integer
+                  format: int64 
+                category:
+                  type: integer
+                  format: int64
+                done:
+                  type: boolean
+                expiration:
+                  type: string
+                  format: date-time
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int64
+                title:
+                  type: string
+                content:
+                  type: string
+                priority:
+                  type: integer
+                  format: int64
+                categoryId:
+                  type: string
+                userId:
+                  type: integer
+                  format: int64
+                done:
+                  type: boolean
+                expiration:
+                  type: string
+                  format: date-time
+      '500':
+        description: Unexpected Error
+      '401':
+        description: Unauthorized
+      '400':
+        description: Bad Request
   /tasks/{id}:
     delete:
-     summary: Delete a task depending on id
-     security:
-       - BearerAuth: []
-     parameters:
-       - name: id
-         in: path
-         required: true
-         description: id of task to be deleted
-         schema:
-           type: integer
-           format: int64
-           example: 1
-     responses:
-       '200':
-         description: Item Deleted
-       '401':
-         description: Unauthorized
-       '500':
-         description: Unexpected Behaviour
-
+      summary: Delete a task depending on id
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: id of task to be deleted
+          schema:
+            type: integer
+            format: int64
+            example: 1
+      responses:
+        '200':
+          description: Item Deleted
+        '401':
+          description: Unauthorized
+        '500':
+          description: Unexpected Behaviour
+    put:
+      summary: Update a task by ID
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the task to update
+          schema:
+            type: integer
+            format: int64
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                content:
+                  type: string
+                priority:
+                  type: integer
+                  format: int64 
+                category:
+                  type: integer
+                  format: int64
+                done:
+                  type: boolean
+                expiration:
+                  type: string
+                  format: date-time
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                    example: 1
+                  title:
+                    type: string
+                    example: "Task title"
+                  content:
+                    type: string
+                    example: "Task content"
+                  priority:
+                    type: integer
+                    format: int64
+                    example: 1
+                  categoryId:
+                    type: integer
+                    format: int64
+                    example: 1
+                  userId:
+                    type: integer
+                    format: int64
+                    example: 1
+                  done:
+                    type: boolean
+                    example: false
+                  expiration:
+                    type: string
+                    format: date-time
+                    example: "2024-04-22T00:00:00Z"
 components:
   securitySchemes:
    BearerAuth:

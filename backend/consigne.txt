@@ -1,0 +1,23 @@
+Création d'une application de gestion de tâches en ligne
+
+Description du projet :
+L'objectif de ce projet est de concevoir et de développer une application Web moderne de gestion de tâches en utilisant les technologies ReactJS et Redux. L'application doit permettre aux utilisateurs de créer, de visualiser, de mettre à jour et de supprimer des tâches, ainsi que de marquer les tâches comme accomplies.
+
+Fonctionnalités principales :
+
+Interface utilisateur conviviale permettant aux utilisateurs de créer un compte et de se connecter.
+Tableau de bord permettant aux utilisateurs de visualiser toutes leurs tâches.
+Capacité à créer de nouvelles tâches avec des détails tels que le titre, la description, la date d'échéance, la priorité, etc.
+Possibilité de marquer les tâches comme complétées ou non complétées.
+Fonction de recherche pour filtrer les tâches en fonction de différents critères.
+Possibilité de mettre à jour et de supprimer des tâches existantes.
+Gestion de l'état de l'application avec Redux pour assurer une gestion efficace des données.
+Méthodologie de développement :
+Les étudiants devraient suivre une approche Agile pour le développement de ce projet. Cela implique la planification itérative, le découpage des fonctionnalités en user stories, et des itérations courtes (par exemple, des sprints d'une journée ou deux).
+
+Tests unitaires :
+Les étudiants devraient écrire des tests unitaires pour les composants React et les fonctions Redux en utilisant Jest. Les tests devraient couvrir les fonctionnalités principales de l'application, en mettant l'accent sur la logique métier critique et les interactions utilisateur.
+
+Livraison :
+À la fin de la semaine, les étudiants devraient présenter une version fonctionnelle de l'application, accompagnée de tests unitaires complets et d'une documentation décrivant les fonctionnalités, les choix de conception, et les décisions prises.
+
