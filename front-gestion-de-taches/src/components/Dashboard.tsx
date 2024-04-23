@@ -1,18 +1,35 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '..//utils/context/AuthContext';
-import '../style/Dashboard.css'
+import React, { useState } from 'react';
+import TaskList from './TaskList';
+import CreateTaskForm from './CreateTaskForm';
+import UpdateTaskForm from './UpdateTaskForm';
 
 const Dashboard = () => {
-    // Utilisation du contexte d'authentification
-    const { user } = useContext(AuthContext);
+  const [tasks, setTasks] = useState([]);
 
-    return (
-        <div>
-            {/* Affichage du nom de l'utilisateur */}
-            <h1>Bienvenue {user.username} sur le tableau de bord !</h1>
-            {/* Ajoutez ici le contenu du tableau de bord */}
-        </div>
-    );
-}
+  const addTask = (title) => {
+    const newTask = { id: Math.random(), title, completed: false };
+    setTasks([...tasks, newTask]);
+  };
+
+  const handleTaskCompletion = (id) => {
+    setTasks(tasks.map(task => task.id === id ? { ...task, completed: !task.completed } : task));
+  };
+
+  const handleTaskDeletion = (id) => {
+    setTasks(tasks.filter(task => task.id !== id));
+  };
+
+  const updateTask = (updatedTask) => {
+    setTasks(tasks.map(task => task.id === updatedTask.id ? updatedTask : task));
+  };
+
+  return (
+    <div>
+      <CreateTaskForm addTask={addTask} />
+      <TaskList tasks={tasks} handleTaskCompletion={handleTaskCompletion} handleTaskDeletion={handleTaskDeletion} />
+      {/* <UpdateTaskForm task={selectedTask} updateTask={updateTask} /> */}
+    </div>
+  );
+};
 
 export default Dashboard;

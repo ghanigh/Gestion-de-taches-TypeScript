@@ -4,10 +4,11 @@ import Home from './pages/Home//Home.js';
 import Sign from './pages/Auth/Sign.js';
 import SignUp from './pages/Auth/SignUp.js';
 import Dashboard from './components/Dashboard.js';
-import Header from './utils/componants/Header.jsx';
+import Header from './utils/componants/Header.tsx';
 import './style/App.css';
 
 function App() {
+  
   return (
     <>
       <BrowserRouter>
