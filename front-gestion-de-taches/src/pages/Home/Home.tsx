@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'; // Importation du module React et du Hook useContext
 import { AuthContext } from '../../utils/context/AuthContext'; // Importation du contexte d'authentification
+import Logo from '../../assets/GYF_logo.png';
 
 const Home = () => {
     const { user } = useContext(AuthContext); // Utilisation du Hook useContext pour accéder au contexte d'authentification

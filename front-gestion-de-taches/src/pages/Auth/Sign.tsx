@@ -18,6 +18,7 @@ const Sign = () => {
         console.log("Entree dans le handleSubmit()"); // Affichage d'un message dans la console
         e.preventDefault(); // Empêche le comportement par défaut du formulaire (rechargement de la page)
         login(user); // Appel de la fonction de connexion avec les données de l'utilisateur
+        /* document.location.href = "./profil"; */
     };
 
     // Rendu du composant Sign avec le formulaire de connexion
