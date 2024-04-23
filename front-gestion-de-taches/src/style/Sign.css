@@ -1,0 +1,52 @@
+/* Styles généraux */
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333333;
+  background-color: #f0f0f0;
+}
+
+/* Styles pour le formulaire de connexion */
+.sign-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Styles pour les champs de saisie */
+input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Styles pour le bouton de connexion */
+button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #00aaff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0088cc;
+}
+
+/* Styles pour les liens */
+a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0088cc;
+}
