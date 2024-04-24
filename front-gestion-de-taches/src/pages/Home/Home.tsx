@@ -1,29 +1,21 @@
-import React, { useContext } from 'react'; // Importation du module React et du Hook useContext
-import { AuthContext } from '../../utils/context/AuthContext'; // Importation du contexte d'authentification
+import React, { useContext } from 'react';
+import { AuthContext } from '../../utils/context/AuthContext';
 import Logo from '../../assets/GYF_logo.png';
+import '../../style/Home.css'
 
 const Home = () => {
-    const { user } = useContext(AuthContext); // Utilisation du Hook useContext pour accéder au contexte d'authentification
-    console.log(user); // Affichage de l'utilisateur dans la console
+    const { user } = useContext(AuthContext);
+    console.log(user);
 
-    // Vérification de la présence de données dans le localStorage
-    if (localStorage.length > 0) {
-        console.log("Entrée dans le if de Home");
-        console.log(user); // Affichage de l'utilisateur dans la console si des données sont présentes dans le localStorage
-    } else {
-        console.log("Problème dans la vérification"); // Affichage d'un message en cas de problème dans la vérification du localStorage
-    }
-
-    // Rendu du composant Home
+    // Affichage du texte explicatif pour les utilisateurs
     return (
         <div>
-            {/* Affichage du titre "Gestion de tâches" si des données sont présentes dans le localStorage */}
-            {localStorage.length > 0 && (
-                <h1>Gestion de tâches</h1>
-                //   Les taches etc 
-            )}
+            <h1>Bienvenue sur notre plateforme de gestion de tâches !</h1>
+            <p>Ici, vous pouvez organiser vos tâches quotidiennes de manière efficace et intuitive.</p>
+            <p>Connectez-vous pour accéder à votre compte et commencer à utiliser nos fonctionnalités.</p>
+            <p>Si vous n'avez pas encore de compte, vous pouvez vous inscrire gratuitement.</p>
         </div>
     );
 }
 
-export default Home; // Exportation du composant Home
+export default Home;
