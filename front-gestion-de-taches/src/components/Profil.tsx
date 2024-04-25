@@ -4,7 +4,7 @@ import axios from 'axios';
 import '../style/Profil.css';
 
 const Profil = () => {
-  const { user, logout } = useContext(AuthContext);
+  const { user, setUser, logout } = useContext(AuthContext);
   const [pseudo, setPseudo] = useState(user.pseudo);
   const [age, setAge] = useState(user.age);
   const [sexe, setSexe] = useState(user.sexe);
@@ -15,7 +15,7 @@ const Profil = () => {
       const updatedUser = { ...user, pseudo, age, sexe, metier };
       const response = await axios.put('/api/user', updatedUser); // Assurez-vous d'ajuster l'URL en fonction de votre backend
       console.log(response.data); // Affichez la réponse du serveur dans la console
-      // Mettez à jour l'utilisateur dans le contexte d'authentification avec les nouvelles données
+      setUser(updatedUser); // Mettez à jour l'utilisateur dans le contexte d'authentification avec les nouvelles données
     } catch (error) {
       console.error('Error updating user:', error);
       // Affichez un message d'erreur à l'utilisateur ou gérez l'erreur de manière appropriée
